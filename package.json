@@ -1,0 +1,52 @@
+{
+  "devDependencies": {
+    "@types/benchmark": "^2.1.2",
+    "@typescript-eslint/eslint-plugin": "^5.59.8",
+    "@typescript-eslint/parser": "^5.59.8",
+    "barrelsby": "^2.8.0",
+    "benchmark": "^2.1.4",
+    "eslint": "^8.41.0",
+    "import-sort-style-module": "^6.0.0",
+    "microtime": "^3.1.1",
+    "prettier": "^2.8.8",
+    "prettier-plugin-import-sort": "^0.0.7",
+    "typescript": "^5.0.4"
+  },
+  "name": "ts-exception-safety",
+  "description": "Support utility for exception safety in TypeScript",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "scripts": {
+    "clean": "rimraf build",
+    "prebuild": "pnpm run clean && pnpm run generate-barrels",
+    "build": "tsc",
+    "start": "node build/entryPoints/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate-barrels": "barrelsby --delete --config ./barrelsby.json",
+    "lint": "eslint .",
+    "benchmark": "pnpm build && node build/entryPoints/benchmark.js"
+  },
+  "importSort": {
+    ".js, .jsx, .ts, .tsx": {
+      "style": "module"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joseweeks/ts-exception-safety.git"
+  },
+  "keywords": [
+    "TypeScript",
+    "Exception",
+    "Safety"
+  ],
+  "author": "Jose Weeks",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joseweeks/ts-exception-safety/issues"
+  },
+  "homepage": "https://github.com/joseweeks/ts-exception-safety#readme",
+  "dependencies": {
+    "rimraf": "^5.0.1"
+  }
+}

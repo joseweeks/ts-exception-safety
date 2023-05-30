@@ -1,0 +1,5 @@
+{
+  "directory": "./src/modules",
+  "location": "all",
+  "exclude": ["/_[^/]*$", "/_[^/]*/index.ts$"]
+}
